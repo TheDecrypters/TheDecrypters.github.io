@@ -4,9 +4,12 @@ tags: clue
 puzzle: 'The Cryptic Crossword: Sunday, October 2, 2022'
 clue: 'A less-than-half-finished crossword? Jerk puzzle'
 letters: '(8)'
-answer:
-straight:
-cryptic:
-straight_is_first:
+answer: ACROSTIC
+straight: puzzle
+cryptic: A less-than-half-finished crossword? Jerk
+straight_is_first: False
 ---
-<li><\li>
+<li>A → <b> A</b> (half of the word crossword) </li>
+<li>less-than-half-finished crossword? → <b> CROS</b> (half of the word crossword)</li>
+<li>JERK → <b> TIC</b> (synonym)</li>
+<li> puzzle → <b> ACROSTIC </b> </li>
