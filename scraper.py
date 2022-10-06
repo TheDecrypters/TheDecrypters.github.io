@@ -28,7 +28,8 @@ driver.close()
 y,m,d = url.split('/')[-3:]
 folder_name=m+'_'+d+'_'+y
 from pathlib import Path
-path = '/Users/jacobshulman/Desktop/Projects/2022/cryptic/new-yorker-crpytic-solutions/puzzles/'
+import os
+path = os.getcwd()+'/puzzles/'
 Path(path+folder_name).mkdir(parents=True, exist_ok=True)
 with open(path+folder_name+'/'+folder_name + '.md', 'w+') as f:
     f.write(f'''---
@@ -53,8 +54,8 @@ for clue in clues:
 layout: layouts/clue.njk
 tags: clue
 puzzle: '{title}'
-clue: {' '.join(clue.split(' ')[:-1])}
-letters: {clue.split(' ')[-1]}
+clue: '{' '.join(clue.split(' ')[:-1])}'
+letters: '{clue.split(' ')[-1]}'
 answer:
 straight:
 cryptic:

@@ -2,8 +2,8 @@
 layout: layouts/clue.njk
 tags: clue
 puzzle: 'The Cryptic Crossword: Sunday, October 2, 2022'
-clue: Michael Morbius’s inner monster seen onscreen
-letters: (4)
+clue: 'Michael Morbius’s inner monster seen onscreen'
+letters: '(4)'
 answer:
 straight:
 cryptic:
