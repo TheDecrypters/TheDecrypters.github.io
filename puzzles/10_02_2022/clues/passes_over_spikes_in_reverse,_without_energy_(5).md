@@ -8,5 +8,6 @@ answer:
 straight:
 cryptic:
 straight_is_first:
+type_of_clue:
 ---
-<li>→</li>
+<li><i></i>→ <span style="color:green"><b> A</b></span></li>
