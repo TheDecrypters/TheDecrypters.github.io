@@ -11,14 +11,14 @@ templateClass: tmpl-clue
 {%- endfor -%}
 <details>
   <summary><b>Type of Clue</b></summary>
-  &emsp;&emsp;Container
+  &emsp;&emsp;{{type_of_clue}}
 </details>
 <details>
   <summary><span style="color:red">Cryptic</span> / <span style="color:blue">Straight</span> </summary>
   {%- if straight_is_first === "True" %}
-      &emsp;&emsp;<span style="color:red">{{straight}} <span style="color:blue">{{crpytic}}</span></span>
+      &emsp;&emsp;<span style="color:red">{{straight}} <span style="color:blue">{{cryptic}}</span></span>
  {%- else %}
-     &emsp;&emsp;<span style="color:blue">{{crpytic}}</span> <span style="color:red">{{straight}}</span>
+     &emsp;&emsp;<span style="color:blue">{{cryptic}}</span> <span style="color:red">{{straight}}</span>
  {%- endif %}  
 </details>
 

@@ -9,4 +9,4 @@ straight:
 cryptic:
 straight_is_first:
 ---
-<li>→</li>
+<li>→test</li>
