@@ -5,7 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 driver = webdriver.Chrome()
-url =  'https://www.newyorker.com/puzzles-and-games-dept/cryptic-crossword/2022/09/25'
+url =  'https://www.newyorker.com/puzzles-and-games-dept/cryptic-crossword/2022/10/02'
 driver.get(
    url)
 title = driver.find_element(By.TAG_NAME, "h1").text
