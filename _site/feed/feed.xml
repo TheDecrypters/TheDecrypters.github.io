@@ -5,12 +5,23 @@
 	
 	<link href="https://example.com/feed/feed.xml" rel="self"/>
 	<link href="https://example.com/"/>
-	<updated>2022-09-25T00:00:00Z</updated>
+	<updated>2022-10-02T00:00:00Z</updated>
 	<id>https://example.com/</id>
 	<author>
 		<name>Your Name Here</name>
 		<email>youremailaddress@example.com</email>
 	</author>
+	
+	<entry>
+		<title>The Cryptic Crossword: Sunday, October 2, 2022</title>
+		<link href="https://example.com/puzzles/10_02_2022/"/>
+		<updated>2022-10-02T00:00:00Z</updated>
+		<id>https://example.com/puzzles/10_02_2022/</id>
+		<content type="html">&lt;p&gt;This puzzle sucked&lt;/p&gt;
+&lt;p&gt;-Rex&lt;/p&gt;
+&lt;h2 id=&quot;clues&quot; tabindex=&quot;-1&quot;&gt;Clues &lt;a class=&quot;direct-link&quot; href=&quot;https://example.com/puzzles/10_02_2022/#clues&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>The Cryptic Crossword: September 25, 2022</title>

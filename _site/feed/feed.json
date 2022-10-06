@@ -10,6 +10,12 @@
     "url": "https://example.com/about-me/"
   },
   "items": [{
+      "id": "https://example.com/puzzles/10_02_2022/",
+      "url": "https://example.com/puzzles/10_02_2022/",
+      "title": "The Cryptic Crossword: Sunday, October 2, 2022",
+      "content_html": "<p>This puzzle sucked</p>\n<p>-Rex</p>\n<h2 id=\"clues\" tabindex=\"-1\">Clues <a class=\"direct-link\" href=\"https://example.com/puzzles/10_02_2022/#clues\" aria-hidden=\"true\">#</a></h2>\n",
+      "date_published": "2022-10-02T00:00:00Z"
+    },{
       "id": "https://example.com/puzzles/09_25_2022/",
       "url": "https://example.com/puzzles/09_25_2022/",
       "title": "The Cryptic Crossword: September 25, 2022",
