@@ -620,4 +620,9 @@
     <loc>https://example.com/_site/puzzles/10_02_2022/clues/a_less-than-half-finished_crossword_jerk_puzzle_(8)/</loc>
     <lastmod>2022-10-06</lastmod>
   </url>
+  
+  <url>
+    <loc>https://example.com/foo/</loc>
+    <lastmod>2023-02-02</lastmod>
+  </url>
 </urlset>
