@@ -1,0 +1,80 @@
+<!-- Include Quill stylesheet -->
+<link href="https://cdn.quilljs.com/1.0.0/quill.snow.css" rel="stylesheet">
+
+A less than half finished crossword? Jerk puzzle (8)<br>
+<br>
+<form onsubmit="foo(event)">
+    <label for="answer">Answer</label><br>
+    <input id="answer"></input><br>
+    <br>
+
+    <label for="explanation">Explanation</label><br>
+    <input id="explanation"></input><br>
+    <br>
+
+    <label for="straight">Straight</label><br>
+    <input id="straight"></input><br>
+    <br>
+
+    <label for="cryptic">Cryptic</label><br>
+    <input id="cryptic"></input><br>
+    <br>
+
+    <label for="straight-is-fisrt">Straight is first</label><br>
+    <input type="radio" id="true" value="true" name="straight-is-first">
+    <label for="true">True</label>
+    <input type="radio" id="false" value="false" name="straight-is-first">
+    <label for="false">False</label><br>
+    <br>
+    
+    <label for="type-of-clue">Type of clue</label><br>
+    <input id="type-of-clue"></input><br>
+    <br>
+
+    <p>Explanation</p>
+    <div id="editor" style="height: 20%;">
+        <p>Hello World!</p>
+    </div>
+
+    <input type="submit" vaule="Submit">
+</form>
+
+ 
+<!-- Create the editor container -->
+
+
+<!-- Include the Quill library -->
+<script src="https://cdn.quilljs.com/1.0.0/quill.js"></script>
+ 
+<!-- Initialize Quill editor -->
+<script>
+    function foo() {
+        const answer = document.getElementById('answer');
+        console.log(answer.value);
+    }
+
+  const toolbarOptions = [
+    ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+    ['blockquote', 'code-block'],
+
+    [{ 'header': 1 }, { 'header': 2 }],               // custom button values
+    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+    [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
+    [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
+    [{ 'direction': 'rtl' }],                         // text direction
+
+    [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
+    [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+
+    [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+    [{ 'font': [] }],
+    [{ 'align': [] }],
+
+    ['clean']                                         // remove formatting button
+    ];
+
+  var editor = new Quill('#editor', {
+    modules: { toolbar: toolbarOptions },
+    theme: 'snow'
+  });
+</script> 
