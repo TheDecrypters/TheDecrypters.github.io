@@ -270,4 +270,9 @@
     <loc>https://example.com/foo/</loc>
     <lastmod>2023-02-02</lastmod>
   </url>
+  
+  <url>
+    <loc>https://example.com/local_answering/foo/</loc>
+    <lastmod>2023-02-02</lastmod>
+  </url>
 </urlset>
