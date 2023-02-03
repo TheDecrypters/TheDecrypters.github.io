@@ -3,64 +3,77 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import json
+
+def build_clue(clue_num, clue, letters):
+    return {
+        "clue_num": clue_num,
+        "clue": clue,
+        "letters": letters,
+        "answer": "",
+        "straight_explanation": "",
+        "straight": "",
+        "cryptic": "",
+        "straight_is_first": False,
+        "type_of_clue": "",
+        "explanation": [
+            {
+                "puzzle_component": "",
+                "component_solution": "",
+                "parenthetical": ""
+            }
+        ]
+    }
 
 driver = webdriver.Chrome()
-url =  'https://www.newyorker.com/puzzles-and-games-dept/cryptic-crossword/2022/10/02'
+url =  'https://www.newyorker.com/puzzles-and-games-dept/cryptic-crossword/2023/01/29'
 driver.get(
    url)
 title = driver.find_element(By.TAG_NAME, "h1").text
 WebDriverWait(driver, 20).until(EC.frame_to_be_available_and_switch_to_it(
     (By.CSS_SELECTOR, "iframe[title='Embedded Crossword']")))
 
-clues = []
+puzzle = {
+    "title": title,
+    "clues": [],
+}
 
+# Add the across clues
 a_clues_el = driver.find_element(By.CLASS_NAME, "aclues")
-a_clues = a_clues_el.find_elements(By.CLASS_NAME, "clueText")
-for clue in a_clues:
-    clues.append(clue.text)
+a_clue_divs = a_clues_el.find_elements(By.CLASS_NAME, "clueDiv")
+for clue in a_clue_divs:
+    clue_num_el = clue.find_element(By.CLASS_NAME, "clueNum")
+    clue_text_el = clue.find_element(By.CLASS_NAME, "clueText")
+    clue_text = clue_text_el.text
 
+    puzzle["clues"].append(
+        build_clue(
+            clue_num_el.text + 'a',
+            ' '.join(clue_text.split(' ')[:-1]),
+            clue_text.split(' ')[-1]
+        )
+    )
+
+# Add the down clues
 d_clues_el = driver.find_element(By.CLASS_NAME, "dclues")
-d_clues = d_clues_el.find_elements(By.CLASS_NAME, "clueText")
-for clue in d_clues:
-    clues.append(clue.text)
+d_clue_divs = d_clues_el.find_elements(By.CLASS_NAME, "clueDiv")
+for clue in d_clue_divs:
+    clue_num_el = clue.find_element(By.CLASS_NAME, "clueNum")
+    clue_text_el = clue.find_element(By.CLASS_NAME, "clueText")
+    clue_text = clue_text_el.text
+
+    puzzle["clues"].append(
+        build_clue(
+            clue_num_el.text + 'd',
+            ' '.join(clue_text.split(' ')[:-1]),
+            clue_text.split(' ')[-1]
+        )
+    )
 
 driver.close()
+
+json_object = json.dumps(puzzle, indent=2)
+
 y,m,d = url.split('/')[-3:]
-folder_name=m+'_'+d+'_'+y
-from pathlib import Path
-import os
-path = os.getcwd()+'/puzzles/'
-Path(path+folder_name).mkdir(parents=True, exist_ok=True)
-with open(path+folder_name+'/'+folder_name + '.md', 'w+') as f:
-    f.write(f'''---
-title: '{title}'
-date: {y+'-'+m+'-'+d}
-tags:
-  - cryptic
-  - posts
-layout: layouts/post.njk
----
-This puzzle sucked 
-
--Rex
-
-## Clues
-    ''')
-  
-for clue in clues:
-    Path(path+folder_name+'/clues/').mkdir(parents=True, exist_ok=True)
-    with open(path+folder_name+'/clues/' + clue.replace(' ','_').lower()+'.md', 'w+') as f:
-        f.write(f'''---
-layout: layouts/clue.njk
-tags: clue
-puzzle: '{title}'
-clue: '{' '.join(clue.split(' ')[:-1])}'
-letters: '{clue.split(' ')[-1]}'
-answer:
-straight_explanation:
-straight:
-cryptic:
-straight_is_first:
-type_of_clue:
----
-<li><i></i>→ <span style="color:green"><b> A</b></span></li>''')
+with open('puzzles_json/' + y + '_' + m + '_' + d + '.json', 'w') as outfile:
+    outfile.write(json_object)
