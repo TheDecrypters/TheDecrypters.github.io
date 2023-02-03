@@ -38,26 +38,63 @@
     <main class="tmpl-clue">
 
       
-  <a href="/puzzles/10_02_2022/"><h3> The Cryptic Crossword: Sunday, October 2, 2022 </h3></a><h1> Fighting a bird (2,2) </h1>
-<details>
-  <summary><b>Type of Clue</b></summary>
-  &emsp;&emsp;Charades
-</details>
-<details>
-  <summary><span style="color:red">Cryptic</span> / <span style="color:blue">Straight</span> </summary>
-      &emsp;&emsp;<span style="color:blue">Fighting <span style="color:red">a bird</span></span>  
-</details>
+<script>
+  function showHint() {
+    const hintCrypticEl = document.getElementsByClassName('hint-cryptic')[0];
+    const hintStraightEl = document.getElementsByClassName('hint-straight')[0];
 
-<details>
-  <summary><b>Solution and Explanation </b></summary>
-  <br><p><b><span style="color:green;font-size:20px">&emsp;&emsp;AT IT </span></b></h1> (slang for fighting)</p>
+    const hintCrypticHidden = hintCrypticEl.getAttribute("hidden");
+
+    if (hintCrypticHidden) {
+       hintCrypticEl.removeAttribute("hidden");
+       hintStraightEl.removeAttribute("hidden");
+    } else {
+       hintCrypticEl.setAttribute("hidden", "hidden");
+       hintStraightEl.setAttribute("hidden", "hidden");
+    }
+  }
+</script>
+
+<div style="margin:auto">
+      <i style="text-align:center"><h3>From <a href="/puzzles/10_02_2022/">The Cryptic Crossword: Sunday, October 2, 2022</h3></a></i>
+
+      <table style="border-collapse: collapse; margin-left:auto; margin-right:auto; font-size:250%">
+        <tbody style="width:fit-content">
+          <tr class="clue">
+              <td class="clue-cryptic" style="padding:0; margin:0">Fighting</td>
+              <td style="padding:0; margin:0">&nbsp;</td>
+              <td class="clue-straight" style="padding:0; margin:0">a bird</td>
+              <td style="padding:0; margin:0">&nbsp;</td>
+              <td style="padding:0; margin:0">(2,2)</td>
+          </tr>
+          <tr class="hint visible" style="text-align:center; font-size:75%">
+              <td class="hint-straight" hidden="hidden" style="border-top: 1px solid blue; color:blue; padding:0; margin:0"><div class="hint-part" >straight</div></td>
+              <td style="padding:0; margin:0">&nbsp;</td>
+              <td class="hint-cryptic" hidden="hidden" style="border-top: 1px solid red; color:red; padding:0; margin:0"><div class="hint-part">cryptic</div></td>
+              <td style="padding:0; margin:0">&nbsp;</td>
+          </tr>
+        </tbody>
+      </table><button id="hint-btn" onclick="showHint()">Cryptic/Straight Hint</button>
   <br>
-<ul style="padding-left:25px">
-<li><i>a</i>→ <span style="color:green"><b> A</b></span></li>
+  <br>
+
+  <details>
+    <summary><b>Type of Clue</b></summary>
+    &emsp;&emsp;Charades
+  </details>
+  <br>
+
+  <details>
+    <summary><b>Solution and Explanation</b></summary>
+    <br><p><b><span style="color:green;font-size:20px">&emsp;&emsp;AT IT </span></b></h1> (slang for fighting)</p>
+    <br>
+  <ul style="padding-left:25px">
+  <li><i>a</i>→ <span style="color:green"><b> A</b></span></li>
 <li><i>bird</i>→ <span style="color:green"><b>TIT</b></span> (type of bird)</li>
-</ul>
-</details>
-<br>
+  </ul>
+  </details>
+  <br>
+</div>
     </main>
 
     <footer></footer>

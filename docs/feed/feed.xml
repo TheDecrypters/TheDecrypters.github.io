@@ -5,12 +5,20 @@
 	
 	<link href="https://crypticanswers.com/feed/feed.xml" rel="self"/>
 	<link href="https://crypticanswers.com/"/>
-	<updated>2022-10-02T00:00:00Z</updated>
+	<updated>2023-01-29T00:00:00Z</updated>
 	<id>https://crypticanswers.com/</id>
 	<author>
 		<name>Your Name Here</name>
 		<email>youremailaddress@example.com</email>
 	</author>
+	
+	<entry>
+		<title>The Cryptic Crossword: Sunday, January 29, 2023</title>
+		<link href="https://crypticanswers.com/puzzles/2023_01_29/"/>
+		<updated>2023-01-29T00:00:00Z</updated>
+		<id>https://crypticanswers.com/puzzles/2023_01_29/</id>
+		<content type="html"></content>
+	</entry>
 	
 	<entry>
 		<title>The Cryptic Crossword: Sunday, October 2, 2022</title>

@@ -38,26 +38,63 @@
     <main class="tmpl-clue">
 
       
-  <a href="/puzzles/10_02_2022/"><h3> The Cryptic Crossword: Sunday, October 2, 2022 </h3></a><h1> Attacked mixed beets (5) </h1>
-<details>
-  <summary><b>Type of Clue</b></summary>
-  &emsp;&emsp;Anagram
-</details>
-<details>
-  <summary><span style="color:red">Cryptic</span> / <span style="color:blue">Straight</span> </summary>
-      &emsp;&emsp;<span style="color:blue">Attacked <span style="color:red">mixed beets</span></span>  
-</details>
+<script>
+  function showHint() {
+    const hintCrypticEl = document.getElementsByClassName('hint-cryptic')[0];
+    const hintStraightEl = document.getElementsByClassName('hint-straight')[0];
 
-<details>
-  <summary><b>Solution and Explanation </b></summary>
-  <br><p><b><span style="color:green;font-size:20px">&emsp;&emsp;BESET </span></b></h1> (synonym of attacked)</p>
+    const hintCrypticHidden = hintCrypticEl.getAttribute("hidden");
+
+    if (hintCrypticHidden) {
+       hintCrypticEl.removeAttribute("hidden");
+       hintStraightEl.removeAttribute("hidden");
+    } else {
+       hintCrypticEl.setAttribute("hidden", "hidden");
+       hintStraightEl.setAttribute("hidden", "hidden");
+    }
+  }
+</script>
+
+<div style="margin:auto">
+      <i style="text-align:center"><h3>From <a href="/puzzles/10_02_2022/">The Cryptic Crossword: Sunday, October 2, 2022</h3></a></i>
+
+      <table style="border-collapse: collapse; margin-left:auto; margin-right:auto; font-size:250%">
+        <tbody style="width:fit-content">
+          <tr class="clue">
+              <td class="clue-cryptic" style="padding:0; margin:0">Attacked</td>
+              <td style="padding:0; margin:0">&nbsp;</td>
+              <td class="clue-straight" style="padding:0; margin:0">mixed beets</td>
+              <td style="padding:0; margin:0">&nbsp;</td>
+              <td style="padding:0; margin:0">(5)</td>
+          </tr>
+          <tr class="hint visible" style="text-align:center; font-size:75%">
+              <td class="hint-straight" hidden="hidden" style="border-top: 1px solid blue; color:blue; padding:0; margin:0"><div class="hint-part" >straight</div></td>
+              <td style="padding:0; margin:0">&nbsp;</td>
+              <td class="hint-cryptic" hidden="hidden" style="border-top: 1px solid red; color:red; padding:0; margin:0"><div class="hint-part">cryptic</div></td>
+              <td style="padding:0; margin:0">&nbsp;</td>
+          </tr>
+        </tbody>
+      </table><button id="hint-btn" onclick="showHint()">Cryptic/Straight Hint</button>
   <br>
-<ul style="padding-left:25px">
-<li><i>mixed beets </i>→ <span style="color:green"><b> BESET</b></span> (mixed the letters of beets)</li>
+  <br>
 
-</ul>
-</details>
-<br>
+  <details>
+    <summary><b>Type of Clue</b></summary>
+    &emsp;&emsp;Anagram
+  </details>
+  <br>
+
+  <details>
+    <summary><b>Solution and Explanation</b></summary>
+    <br><p><b><span style="color:green;font-size:20px">&emsp;&emsp;BESET </span></b></h1> (synonym of attacked)</p>
+    <br>
+  <ul style="padding-left:25px">
+  <li><i>mixed beets </i>→ <span style="color:green"><b> BESET</b></span> (mixed the letters of beets)</li>
+
+  </ul>
+  </details>
+  <br>
+</div>
     </main>
 
     <footer></footer>
