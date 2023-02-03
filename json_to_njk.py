@@ -20,11 +20,6 @@ tags:
   - posts
 layout: layouts/post.njk
 ---
-This puzzle sucked 
-
--Rex
-
-## Clues
     ''')
 
 for clue in puzzle['clues']:

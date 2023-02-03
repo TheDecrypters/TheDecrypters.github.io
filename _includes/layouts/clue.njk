@@ -3,31 +3,77 @@ layout: layouts/base.njk
 templateClass: tmpl-clue
 ---
 
-{%- for post in collections.posts -%}
-  {%- if post.data.title === puzzle %}
-  <a href="{{ post.url | url }}"><h3> {{puzzle}} </h3></a>
-  {%- endif %}
-{%- endfor -%}
-<h1> {{clue}} {{letters}} </h1>
-<details>
-  <summary><b>Type of Clue</b></summary>
-  &emsp;&emsp;{{type_of_clue}}
-</details>
-<details>
-  <summary><span style="color:red">Cryptic</span> / <span style="color:blue">Straight</span> </summary>
-  {%- if straight_is_first === "True" %}
-      &emsp;&emsp;<span style="color:blue">{{straight}} <span style="color:red">{{cryptic}}</span></span>
- {%- else %}
-     &emsp;&emsp;<span style="color:red">{{cryptic}}</span> <span style="color:blue">{{straight}}</span>
- {%- endif %}  
-</details>
+<script>
+  function showHint() {
+    const hintCrypticEl = document.getElementsByClassName('hint-cryptic')[0];
+    const hintStraightEl = document.getElementsByClassName('hint-straight')[0];
 
-<details>
-  <summary><b>Solution and Explanation </b></summary>
-  <br><p><b><span style="color:green;font-size:20px">&emsp;&emsp;{{answer}} </span></b></h1> ({{straight_explanation}})</p>
+    const hintCrypticHidden = hintCrypticEl.getAttribute("hidden");
+
+    if (hintCrypticHidden) {
+       hintCrypticEl.removeAttribute("hidden");
+       hintStraightEl.removeAttribute("hidden");
+    } else {
+       hintCrypticEl.setAttribute("hidden", "hidden");
+       hintStraightEl.setAttribute("hidden", "hidden");
+    }
+  }
+</script>
+
+<div style="margin:auto">
+  {%- for post in collections.posts -%}
+    {%- if post.data.title === puzzle %}
+      <i style="text-align:center"><h3>From <a href="{{ post.url | url }}">{{puzzle}}</h3></a></i>
+
+      <table style="border-collapse: collapse; margin-left:auto; margin-right:auto; font-size:250%">
+        <tbody style="width:fit-content">
+          <tr class="clue">
+            {%- if straight_is_first === "True" %}
+              <td class="clue-cryptic" style="padding:0; margin:0">{{straight}}</td>
+              <td style="padding:0; margin:0">&nbsp;</td>
+              <td class="clue-straight" style="padding:0; margin:0">{{cryptic}}</td>
+            {%- else %}
+              <td class="clue-cryptic" style="padding:0; margin:0">{{cryptic}}</td>
+              <td style="padding:0; margin:0">&nbsp;</td>
+              <td class="clue-straight" style="padding:0; margin:0">{{straight}}</td>
+            {%- endif %}
+              <td style="padding:0; margin:0">&nbsp;</td>
+              <td style="padding:0; margin:0">{{letters}}</td>
+          </tr>
+          <tr class="hint visible" style="text-align:center; font-size:75%">
+            {%- if straight_is_first === "True" %}
+              <td class="hint-straight" hidden="hidden" style="border-top: 1px solid blue; color:blue; padding:0; margin:0"><div class="hint-part" >straight</div></td>
+              <td style="padding:0; margin:0">&nbsp;</td>
+              <td class="hint-cryptic" hidden="hidden" style="border-top: 1px solid red; color:red; padding:0; margin:0"><div class="hint-part">cryptic</div></td>
+            {%- else %}
+              <td class="hint-cryptic" hidden="hidden" style="border-top: 1px solid red; color:red; padding:0; margin:0"><div class="hint-part">cryptic</div></td>
+              <td style="padding:0; margin:0">&nbsp;</td>
+              <td class="hint-straight" hidden="hidden" style="border-top: 1px solid blue; color:blue; padding:0; margin:0"><div class="hint-part" >straight</div></td>
+            {%- endif %}
+              <td style="padding:0; margin:0">&nbsp;</td>
+          </tr>
+        </tbody>
+      </table>
+    {%- endif %}
+  {%- endfor -%}
+
+  <button id="hint-btn" onclick="showHint()">Cryptic/Straight Hint</button>
   <br>
-<ul style="padding-left:25px">
-{{ content | safe }}
-</ul>
-</details>
-<br>
+  <br>
+
+  <details>
+    <summary><b>Type of Clue</b></summary>
+    &emsp;&emsp;{{type_of_clue}}
+  </details>
+  <br>
+
+  <details>
+    <summary><b>Solution and Explanation</b></summary>
+    <br><p><b><span style="color:green;font-size:20px">&emsp;&emsp;{{answer}} </span></b></h1> ({{straight_explanation}})</p>
+    <br>
+  <ul style="padding-left:25px">
+  {{ content | safe }}
+  </ul>
+  </details>
+  <br>
+</div>
