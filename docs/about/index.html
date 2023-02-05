@@ -37,7 +37,18 @@
 
     <main class="tmpl-post">
 
-      <h1></h1>
+      <style>
+  .clues-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .clues {
+    flex-basis: 50%; 
+    min-width: 400px;
+  }
+</style>
+<h1></h1>
 <h1 class="post-title p-name" itemprop="name headline">About Me</h1>
 
 <time datetime="2022-10-06">06 Oct 2022</time>
@@ -45,7 +56,17 @@
 <p>I am a person that writes stuff.</p>
 
 
-<ul></ul>
+<div class='clues-container'>
+  <div class='clues'>
+    Across:
+    <ol></ol>
+  </div>
+
+  <div class='clues'>
+    Down
+    <ol></ol>
+  </div>
+</div>
 
     </main>
 

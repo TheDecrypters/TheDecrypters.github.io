@@ -3,6 +3,107 @@ layout: layouts/base.njk
 templateClass: tmpl-clue
 ---
 
+<style>
+  .clue-from-description {
+    margin: auto;
+    text-align: center;
+    font-size: 1.5vw;
+  }
+
+  .clue-table {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 3vw;
+  }
+
+  .clue-tbody {
+    width: fit-content
+  }
+
+  td {
+    padding: 0; 
+    margin: 0;
+  }
+
+  b {
+    color: green;
+  }
+
+  body {
+    font-family: georgia;
+  }
+
+  button {
+    background-color: lightgrey;
+    border: none;
+    font-size: 2vw;
+    border-radius: 2px;
+    width: 10%;
+    padding: 1vw 1vw;
+    font-family: georgia;
+  }
+
+  .button-container {
+    margin-top: 10px;
+  }
+
+  .hint-button {
+    margin-left: 35%;
+  }
+
+  .solution-button {
+    margin-left: 10%;
+  }
+
+  .solution {
+    width: 100%;
+    text-align: center;
+  }
+
+  .answer {
+    font-size: 3vw;
+  }
+
+  .explanation {
+    font-size: 2vw;
+  }
+
+  
+
+  @media screen and (max-width: 800px) {
+    .clue-from-description {
+      font-size: 2vw;
+    }
+
+    .clue-table {
+      font-size: 4vw;
+    }
+
+    .answer {
+      font-size: 4vw;
+    }
+
+    .explanation {
+      font-size: 2.66vw;
+    }
+
+    .button {
+      {# font-size: 2.66vw; #}
+      width: 10%
+    }
+
+    .hint-button {
+      margin-left: 35%;
+    }
+
+    .solution-button {
+      margin-left: 10%;
+    }
+  }
+
+</style>
+
 <script>
   function showHint() {
     const hintCrypticEl = document.getElementsByClassName('hint-cryptic')[0];
@@ -12,68 +113,103 @@ templateClass: tmpl-clue
 
     if (hintCrypticHidden) {
        hintCrypticEl.removeAttribute("hidden");
+       hintCrypticEl.classList.toggle('fade');
        hintStraightEl.removeAttribute("hidden");
     } else {
        hintCrypticEl.setAttribute("hidden", "hidden");
        hintStraightEl.setAttribute("hidden", "hidden");
     }
   }
+
+  function showSolution() {
+    const solutionEl = document.getElementsByClassName('solution')[0];
+
+    const solutionHidden = solutionEl.getAttribute("hidden");
+
+    if (solutionHidden) {
+      solutionEl.removeAttribute("hidden");
+    } else {
+      solutionEl.setAttribute("hidden", "hidden");
+    }
+  }
 </script>
 
-<div style="margin:auto">
+<div style="margin:auto;">
   {%- for post in collections.posts -%}
     {%- if post.data.title === puzzle %}
-      <i style="text-align:center"><h3>From <a href="{{ post.url | url }}">{{puzzle}}</h3></a></i>
+      <p class="clue-from-description"><i>From <a href="{{ post.url | url }}">{{puzzle}}</a></i></p>
 
-      <table style="border-collapse: collapse; margin-left:auto; margin-right:auto; font-size:250%">
-        <tbody style="width:fit-content">
+      <div>
+      <table class="clue-table">
+        <tbody class="clue-tbody">
           <tr class="clue">
-            {%- if straight_is_first === "True" %}
-              <td class="clue-cryptic" style="padding:0; margin:0">{{straight}}</td>
-              <td style="padding:0; margin:0">&nbsp;</td>
-              <td class="clue-straight" style="padding:0; margin:0">{{cryptic}}</td>
+            {%- if straight_is_first === 'true' %}
+              <td class="clue-cryptic">{{straight}}</td>
+              <td>&nbsp;</td>
+              <td class="clue-straight">{{cryptic}}</td>
             {%- else %}
-              <td class="clue-cryptic" style="padding:0; margin:0">{{cryptic}}</td>
-              <td style="padding:0; margin:0">&nbsp;</td>
-              <td class="clue-straight" style="padding:0; margin:0">{{straight}}</td>
+              <td class="clue-cryptic">{{cryptic}}</td>
+              <td>&nbsp;</td>
+              <td class="clue-straight">{{straight}}</td>
             {%- endif %}
-              <td style="padding:0; margin:0">&nbsp;</td>
-              <td style="padding:0; margin:0">{{letters}}</td>
+              <td>&nbsp;</td>
+              <td>{{letters}}</td>
           </tr>
           <tr class="hint visible" style="text-align:center; font-size:75%">
-            {%- if straight_is_first === "True" %}
-              <td class="hint-straight" hidden="hidden" style="border-top: 1px solid blue; color:blue; padding:0; margin:0"><div class="hint-part" >straight</div></td>
-              <td style="padding:0; margin:0">&nbsp;</td>
-              <td class="hint-cryptic" hidden="hidden" style="border-top: 1px solid red; color:red; padding:0; margin:0"><div class="hint-part">cryptic</div></td>
+            {%- if straight_is_first === 'true' %}
+              <td class="hint-straight" hidden="hidden" style="border-top: 1px solid blue; color:blue;"><div class="hint-part" >straight</div></td>
+              <td>&nbsp;</td>
+              <td class="hint-cryptic" hidden="hidden" style="border-top: 1px solid red; color:red;"><div class="hint-part">cryptic</div></td>
             {%- else %}
-              <td class="hint-cryptic" hidden="hidden" style="border-top: 1px solid red; color:red; padding:0; margin:0"><div class="hint-part">cryptic</div></td>
-              <td style="padding:0; margin:0">&nbsp;</td>
-              <td class="hint-straight" hidden="hidden" style="border-top: 1px solid blue; color:blue; padding:0; margin:0"><div class="hint-part" >straight</div></td>
+              <td class="hint-cryptic" hidden="hidden" style="border-top: 1px solid red; color:red;"><div class="hint-part">cryptic</div></td>
+              <td>&nbsp;</td>
+              <td class="hint-straight" hidden="hidden" style="border-top: 1px solid blue; color:blue;"><div class="hint-part" >straight</div></td>
             {%- endif %}
-              <td style="padding:0; margin:0">&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
           </tr>
         </tbody>
       </table>
+      </div>
     {%- endif %}
   {%- endfor -%}
 
-  <button id="hint-btn" onclick="showHint()">Cryptic/Straight Hint</button>
+  <div class="button-container">
+    <button id="hint-btn" class="button hint-button" onclick="showHint()">Hint</button>
+    <button id="solution-btn" class="button solution-button" onclick="showSolution()">Solution</button>
+  </div>
   <br>
   <br>
 
-  <details>
+  <div class="solution" hidden="hidden">
+    <div class="answer"><b>{{ answer }}</b></div>
+    <br>
+    <div class="explanation" style='display:inline-block; text-align: left'>
+    {# <ul>
+    {%- for component in explanation.split(';') -%}
+      <li>{{ component.split('->')[0] }} -> {{ component.split('->')[1] }}</li>
+    {%- endfor -%}
+    </ul> #}
+
+    <ul>
+      {{ content | safe }}
+    </ul>
+    </div>
+  </div>
+
+  {# <details>
     <summary><b>Type of Clue</b></summary>
     &emsp;&emsp;{{type_of_clue}}
   </details>
-  <br>
+  <br> #}
 
-  <details>
+  {# <details>
     <summary><b>Solution and Explanation</b></summary>
-    <br><p><b><span style="color:green;font-size:20px">&emsp;&emsp;{{answer}} </span></b></h1> ({{straight_explanation}})</p>
+    <br><p><b><span style="color:green;font-size:20px">&emsp;&emsp;{{ answer }} </span></b></h1></p>
     <br>
   <ul style="padding-left:25px">
-  {{ content | safe }}
+  {{ explanation }}
   </ul>
   </details>
-  <br>
+  <br> #}
 </div>

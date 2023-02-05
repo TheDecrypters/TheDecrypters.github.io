@@ -22,13 +22,13 @@ layout: layouts/post.njk
 ---
     ''')
 
-for clue in puzzle['clues']:
+for clue in puzzle['clues']['across']:
     Path(path + folder_name + '/clues/').mkdir(parents=True, exist_ok=True)
     
-    explanation = ''
+    # explanation = ''
 
-    for explanation_component in clue['explanation']:
-        explanation += f"<li>{explanation_component['puzzle_component']} → <span style='color:green'><b>{explanation_component['component_solution'].upper()}</b></span> ({explanation_component['parenthetical']})</li>"
+    # for explanation_component in clue['explanation']:
+        # explanation += f"<li>{explanation_component['puzzle_component']} → <span style='color:green'><b>{explanation_component['component_solution'].upper()}</b></span> ({explanation_component['parenthetical']})</li>"
 
     with open(path + folder_name + '/clues/' + clue["clue"].replace(' ','_').lower() + '.md', 'w+') as f:
         f.write(f'''---
@@ -38,11 +38,32 @@ puzzle: '{puzzle['title']}'
 clue: '{clue['clue']}'
 letters: '{clue['letters']}'
 answer: '{clue['answer']}'
-straight_explanation: '{clue['straight_explanation']}'
 straight: '{clue['straight']}'
 cryptic: '{clue['cryptic']}'
-straight_is_first: '{clue['straight_is_first']}'
-type_of_clue: '{clue['type_of_clue']}'
+straight_is_first: '{'true' if clue['straight_is_first'] else 'false'}'
+explanation: '{clue['explanation']}'
 ---
-{explanation}''')
+<li> → <b></b></li>''')
+
+for clue in puzzle['clues']['down']:
+    Path(path + folder_name + '/clues/').mkdir(parents=True, exist_ok=True)
+    
+    # explanation = ''
+
+    # for explanation_component in clue['explanation']:
+        # explanation += f"<li>{explanation_component['puzzle_component']} → <span style='color:green'><b>{explanation_component['component_solution'].upper()}</b></span> ({explanation_component['parenthetical']})</li>"
+
+    with open(path + folder_name + '/clues/' + clue["clue"].replace(' ','_').lower() + '.md', 'w+') as f:
+        f.write(f'''---
+layout: layouts/clue.njk
+tags: clue
+puzzle: '{puzzle['title']}'
+clue: '{clue['clue']}'
+letters: '{clue['letters']}'
+answer: '{clue['answer']}'
+straight: '{clue['straight']}'
+cryptic: '{clue['cryptic']}'
+straight_is_first: '{'true' if clue['straight_is_first'] else 'false'}'
+explanation: '{clue['explanation']}'
+---''')
 

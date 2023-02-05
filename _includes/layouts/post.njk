@@ -2,6 +2,17 @@
 layout: layouts/base.njk
 templateClass: tmpl-post
 ---
+<style>
+  .clues-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .clues {
+    flex-basis: 50%; 
+    min-width: 400px;
+  }
+</style>
 <h1></h1>
 <h1 class="post-title p-name" itemprop="name headline">{{ title }}</h1>
 
@@ -13,13 +24,29 @@ templateClass: tmpl-post
 
 {{ content | safe }}
 
-<ul>
-{%- for post in collections.clue -%}
-  {%- if post.data.puzzle === title %}
-  <li><a href="{{ post.url | url }}">{{ post.data.clue }} {{post.data.letters}} </a></li>
-  {%- endif %}
-{%- endfor -%}
-</ul>
+<div class='clues-container'>
+  <div class='clues'>
+    Across:
+    <ol>
+    {%- for post in collections.clue -%}
+      {%- if post.data.puzzle === title and post.data.clue_category === 'across' %}
+      <li value="{{ post.data.clue_num }}"><a href="{{ post.url | url }}">{{ post.data.clue }} {{post.data.letters}} </a></li>
+      {%- endif %}
+    {%- endfor -%}
+    </ol>
+  </div>
+
+  <div class='clues'>
+    Down
+    <ol>
+    {%- for post in collections.clue -%}
+      {%- if post.data.puzzle === title and post.data.clue_category === 'down' %}
+      <li value="{{ post.data.clue_num }}"><a href="{{ post.url | url }}">{{ post.data.clue }} {{post.data.letters}} </a></li>
+      {%- endif %}
+    {%- endfor -%}
+    </ol>
+  </div>
+</div>
 
 {%- if collections.posts %}
 {%- set nextPost = collections.posts | getNextCollectionItem(page) %}
