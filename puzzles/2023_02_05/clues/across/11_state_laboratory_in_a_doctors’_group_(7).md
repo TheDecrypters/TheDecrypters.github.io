@@ -2,7 +2,7 @@
 layout: layouts/clue.njk
 tags: clue
 puzzle: 'The Cryptic Crossword: Sunday, February 5, 2023'
-clue: 'State laboratory in a doctors’ group (7)'
+clue: 'State laboratory in a doctors’ group'
 clue_num: '11'
 clue_category: 'across'
 letters: '(7)'

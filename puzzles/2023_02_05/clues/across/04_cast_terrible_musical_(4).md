@@ -2,7 +2,7 @@
 layout: layouts/clue.njk
 tags: clue
 puzzle: 'The Cryptic Crossword: Sunday, February 5, 2023'
-clue: 'Cast terrible musical (4)'
+clue: 'Cast terrible musical'
 clue_num: '4'
 clue_category: 'across'
 letters: '(4)'

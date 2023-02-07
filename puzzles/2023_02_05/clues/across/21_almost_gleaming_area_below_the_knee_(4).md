@@ -2,7 +2,7 @@
 layout: layouts/clue.njk
 tags: clue
 puzzle: 'The Cryptic Crossword: Sunday, February 5, 2023'
-clue: 'Almost gleaming area below the knee (4)'
+clue: 'Almost gleaming area below the knee'
 clue_num: '21'
 clue_category: 'across'
 letters: '(4)'

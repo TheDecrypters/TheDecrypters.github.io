@@ -2,7 +2,7 @@
 layout: layouts/clue.njk
 tags: clue
 puzzle: 'The Cryptic Crossword: Sunday, February 5, 2023'
-clue: 'The room’s heat unit (5)'
+clue: 'The room’s heat unit'
 clue_num: '5'
 clue_category: 'down'
 letters: '(5)'

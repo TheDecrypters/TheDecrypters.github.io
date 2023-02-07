@@ -2,7 +2,7 @@
 layout: layouts/clue.njk
 tags: clue
 puzzle: 'The Cryptic Crossword: Sunday, February 5, 2023'
-clue: 'Star to get rid of retreat, reportedly (5)'
+clue: 'Star to get rid of retreat, reportedly'
 clue_num: '4'
 clue_category: 'down'
 letters: '(5)'

@@ -2,7 +2,7 @@
 layout: layouts/clue.njk
 tags: clue
 puzzle: 'The Cryptic Crossword: Sunday, February 5, 2023'
-clue: 'Chew wooden peg initially to hide excitement (6)'
+clue: 'Chew wooden peg initially to hide excitement'
 clue_num: '7'
 clue_category: 'across'
 letters: '(6)'

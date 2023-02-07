@@ -2,7 +2,7 @@
 layout: layouts/clue.njk
 tags: clue
 puzzle: 'The Cryptic Crossword: Sunday, February 5, 2023'
-clue: 'Limit a gangster (6)'
+clue: 'Limit a gangster'
 clue_num: '20'
 clue_category: 'across'
 letters: '(6)'

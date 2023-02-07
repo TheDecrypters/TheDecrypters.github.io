@@ -2,7 +2,7 @@
 layout: layouts/clue.njk
 tags: clue
 puzzle: 'The Cryptic Crossword: Sunday, February 5, 2023'
-clue: 'Coupling atom with no charge? (5)'
+clue: 'Coupling atom with no charge?'
 clue_num: '15'
 clue_category: 'down'
 letters: '(5)'

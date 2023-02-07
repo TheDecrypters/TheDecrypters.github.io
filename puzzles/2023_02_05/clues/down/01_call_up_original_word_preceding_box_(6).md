@@ -2,7 +2,7 @@
 layout: layouts/clue.njk
 tags: clue
 puzzle: 'The Cryptic Crossword: Sunday, February 5, 2023'
-clue: 'Call up original word preceding box (6)'
+clue: 'Call up original word preceding box'
 clue_num: '1'
 clue_category: 'down'
 letters: '(6)'

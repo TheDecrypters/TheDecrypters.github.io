@@ -2,7 +2,7 @@
 layout: layouts/clue.njk
 tags: clue
 puzzle: 'The Cryptic Crossword: Sunday, February 5, 2023'
-clue: 'Hit and awkwardly heal Renaissance man (7)'
+clue: 'Hit and awkwardly heal Renaissance man'
 clue_num: '10'
 clue_category: 'down'
 letters: '(7)'

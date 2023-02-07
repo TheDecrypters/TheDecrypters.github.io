@@ -2,7 +2,7 @@
 layout: layouts/clue.njk
 tags: clue
 puzzle: 'The Cryptic Crossword: Sunday, February 5, 2023'
-clue: 'Where to get money from pastimes regularly (4)'
+clue: 'Where to get money from pastimes regularly'
 clue_num: '18'
 clue_category: 'down'
 letters: '(4)'

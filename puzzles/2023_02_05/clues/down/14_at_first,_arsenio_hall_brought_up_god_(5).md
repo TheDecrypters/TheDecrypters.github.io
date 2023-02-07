@@ -2,7 +2,7 @@
 layout: layouts/clue.njk
 tags: clue
 puzzle: 'The Cryptic Crossword: Sunday, February 5, 2023'
-clue: 'At first, Arsenio Hall brought up God (5)'
+clue: 'At first, Arsenio Hall brought up God'
 clue_num: '14'
 clue_category: 'down'
 letters: '(5)'

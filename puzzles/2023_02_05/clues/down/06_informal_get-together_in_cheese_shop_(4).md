@@ -2,7 +2,7 @@
 layout: layouts/clue.njk
 tags: clue
 puzzle: 'The Cryptic Crossword: Sunday, February 5, 2023'
-clue: 'Informal get-together in cheese shop (4)'
+clue: 'Informal get-together in cheese shop'
 clue_num: '6'
 clue_category: 'down'
 letters: '(4)'

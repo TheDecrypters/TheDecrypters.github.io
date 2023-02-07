@@ -2,7 +2,7 @@
 layout: layouts/clue.njk
 tags: clue
 puzzle: 'The Cryptic Crossword: Sunday, February 5, 2023'
-clue: 'Orally disclose ingredient in vichyssoise (4)'
+clue: 'Orally disclose ingredient in vichyssoise'
 clue_num: '9'
 clue_category: 'across'
 letters: '(4)'

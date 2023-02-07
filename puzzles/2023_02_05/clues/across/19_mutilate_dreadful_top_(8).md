@@ -2,7 +2,7 @@
 layout: layouts/clue.njk
 tags: clue
 puzzle: 'The Cryptic Crossword: Sunday, February 5, 2023'
-clue: 'Mutilate dreadful top (8)'
+clue: 'Mutilate dreadful top'
 clue_num: '19'
 clue_category: 'across'
 letters: '(8)'

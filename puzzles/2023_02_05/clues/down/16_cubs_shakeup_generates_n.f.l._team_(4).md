@@ -2,7 +2,7 @@
 layout: layouts/clue.njk
 tags: clue
 puzzle: 'The Cryptic Crossword: Sunday, February 5, 2023'
-clue: 'Cubs shakeup generates N.F.L. team (4)'
+clue: 'Cubs shakeup generates N.F.L. team'
 clue_num: '16'
 clue_category: 'down'
 letters: '(4)'

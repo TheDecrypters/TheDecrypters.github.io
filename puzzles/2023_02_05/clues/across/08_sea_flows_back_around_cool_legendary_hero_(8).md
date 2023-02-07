@@ -2,7 +2,7 @@
 layout: layouts/clue.njk
 tags: clue
 puzzle: 'The Cryptic Crossword: Sunday, February 5, 2023'
-clue: 'Sea flows back around cool legendary hero (8)'
+clue: 'Sea flows back around cool legendary hero'
 clue_num: '8'
 clue_category: 'across'
 letters: '(8)'

@@ -2,7 +2,7 @@
 layout: layouts/clue.njk
 tags: clue
 puzzle: 'The Cryptic Crossword: Sunday, February 5, 2023'
-clue: 'Witch left, clasping knob and lumber (7)'
+clue: 'Witch left, clasping knob and lumber'
 clue_num: '13'
 clue_category: 'across'
 letters: '(7)'

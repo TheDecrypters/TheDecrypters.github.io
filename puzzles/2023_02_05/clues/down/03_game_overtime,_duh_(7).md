@@ -2,7 +2,7 @@
 layout: layouts/clue.njk
 tags: clue
 puzzle: 'The Cryptic Crossword: Sunday, February 5, 2023'
-clue: 'Game overtime, duh (7)'
+clue: 'Game overtime, duh'
 clue_num: '3'
 clue_category: 'down'
 letters: '(7)'

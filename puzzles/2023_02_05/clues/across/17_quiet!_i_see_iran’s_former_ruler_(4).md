@@ -2,7 +2,7 @@
 layout: layouts/clue.njk
 tags: clue
 puzzle: 'The Cryptic Crossword: Sunday, February 5, 2023'
-clue: 'Quiet! I see Iran’s former ruler (4)'
+clue: 'Quiet! I see Iran’s former ruler'
 clue_num: '17'
 clue_category: 'across'
 letters: '(4)'

@@ -2,7 +2,7 @@
 layout: layouts/clue.njk
 tags: clue
 puzzle: 'The Cryptic Crossword: Sunday, February 5, 2023'
-clue: 'Beyoncé parts with early trio a single time (4)'
+clue: 'Beyoncé parts with early trio a single time'
 clue_num: '2'
 clue_category: 'down'
 letters: '(4)'
